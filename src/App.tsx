@@ -15,7 +15,9 @@ function App(): JSX.Element {
                 <li>Second item in my List</li>
                 <li>Third item in my List</li>
             </ul>
-            <Button>Log Hello World</Button>
+            <Button onClick={() => console.log("I am logged")}>
+                Log Hello World
+            </Button>
             <p>Hello World! COS420</p>
             <p>Michael Lally</p>
         </div>
