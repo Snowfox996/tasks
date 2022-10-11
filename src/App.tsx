@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import logo from "./assets/vslogo.png";
+import { Button } from "react-bootstrap";
 function App(): JSX.Element {
     return (
         <div className="App">
@@ -14,6 +15,7 @@ function App(): JSX.Element {
                 <li>Second item in my List</li>
                 <li>Third item in my List</li>
             </ul>
+            <Button>Log Hello World</Button>
             <p>Hello World! COS420</p>
             <p>Michael Lally</p>
         </div>
