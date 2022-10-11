@@ -34,7 +34,7 @@ function App(): JSX.Element {
                                 backgroundColor: "red"
                             }}
                         ></div>
-                        <Button onClick={() => console.log("I am logged")}>
+                        <Button onClick={() => console.log("Hello World!")}>
                             Log Hello World
                         </Button>
                     </Col>
