@@ -13,6 +13,13 @@ function App(): JSX.Element {
             <Container>
                 <Row>
                     <Col>
+                        <div
+                            style={{
+                                width: "40px",
+                                height: "80px",
+                                backgroundColor: "red"
+                            }}
+                        ></div>
                         <ul>
                             <li>First item in my list</li>
                             <li>Second item in my List</li>
@@ -20,6 +27,13 @@ function App(): JSX.Element {
                         </ul>
                     </Col>
                     <Col>
+                        <div
+                            style={{
+                                width: "40px",
+                                height: "80px",
+                                backgroundColor: "red"
+                            }}
+                        ></div>
                         <Button onClick={() => console.log("I am logged")}>
                             Log Hello World
                         </Button>
