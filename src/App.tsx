@@ -6,7 +6,7 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                UD COS420 with React Hooks and TypeScript
+                UM COS420 with React Hooks and TypeScript
             </header>
             <h1>Hello this is my header</h1>
             <img src={logo} alt="A Picture of the VSCode logo" />
