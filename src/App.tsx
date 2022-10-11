@@ -9,6 +9,11 @@ function App(): JSX.Element {
             </header>
             <h1>Hello this is my header</h1>
             <img src={logo} alt="A Picture of the VSCode logo" />
+            <ul>
+                <li>First item in my list</li>
+                <li>Second item in my List</li>
+                <li>Third item in my List</li>
+            </ul>
             <p>Hello World! COS420</p>
             <p>Michael Lally</p>
         </div>
