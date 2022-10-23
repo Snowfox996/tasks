@@ -61,7 +61,11 @@ export function getNames(questions: Question[]): string[] {
  * Consumes an array of questions and returns the sum total of all their points added together.
  */
 export function sumPoints(questions: Question[]): number {
-    return 0;
+    const test = questions.reduce(
+        (curTotal: number, question: Question) => curTotal + question.points,
+        0
+    );
+    return test;
 }
 
 /***
