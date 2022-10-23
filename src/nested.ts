@@ -1,3 +1,4 @@
+import { validateLocaleAndSetLanguage } from "typescript";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 
@@ -119,7 +120,10 @@ export function makeAnswers(questions: Question[]): Answer[] {
  * each question is now published, regardless of its previous published status.
  */
 export function publishAll(questions: Question[]): Question[] {
-    return [];
+    const newQuestion = questions.map(
+        (val: Question): Question => ({ ...val, published: true })
+    );
+    return newQuestion;
 }
 
 /***
