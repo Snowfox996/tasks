@@ -1,3 +1,5 @@
+import { sign } from "crypto";
+
 /**
  * Consume an array of numbers, and return a new array containing
  * JUST the first and last number. If there are no elements, return
@@ -46,7 +48,13 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    const removeSign = amounts.map((dol: string): string =>
+        dol[0] == "$" ? dol.slice(1) : dol
+    );
+    const strToNum = removeSign.map((dollar: string): number =>
+        isNaN(parseInt(dollar)) ? 0 : parseInt(dollar)
+    );
+    return strToNum;
 };
 
 /**
