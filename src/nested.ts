@@ -32,6 +32,12 @@ export function findQuestion(
     questions: Question[],
     id: number
 ): Question | null {
+    const sorted = questions.findIndex(
+        (val: Question): boolean => val.id == id
+    );
+    if (questions[sorted].id == id) {
+        return questions[sorted];
+    }
     return null;
 }
 
@@ -40,7 +46,7 @@ export function findQuestion(
  * with the given `id`.
  */
 export function removeQuestion(questions: Question[], id: number): Question[] {
-    return [];
+    return questions.filter((val: Question): boolean => val.id != id);
 }
 
 /***
