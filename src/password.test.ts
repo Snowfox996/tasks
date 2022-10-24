@@ -2,7 +2,7 @@ import { testPassValidity } from "./password";
 
 const test_pass = [
     "t@osh0rt",
-    "noSpecialCharacters09AndLongEngough",
+    "noSpecialCharactersornum",
     "NoNumb&rsbutlongenough",
     "LongEnoughNoNumorSpecCh3r",
     "*CharAtBeginingandlong",
