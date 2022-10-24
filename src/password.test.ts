@@ -1,24 +1,23 @@
 import { testPassValidity } from "./password";
 
-test("checks if pass is long enough", () => {
-    expect(testPassValidity("h&*(jj")).toBe(false);
-    expect(testPassValidity("u*9klkuj")).toBe(false);
-    expect(testPassValidity("h^78jkh)")).toBe(false);
-    expect(testPassValidity("Onethejuik*(7fs6H")).toBe(true);
-});
-test("checks if has atleast one num", () => {
-    expect(testPassValidity("h)&jj")).toBe(false);
-    expect(testPassValidity("hjhjsdsdfkjf")).toBe(false);
-    expect(testPassValidity("Thdklsflsd$kfjlkd&j4j")).toBe(true);
-});
-test("checks if pass has at least one special char", () => {
-    expect(testPassValidity("h234jj")).toBe(false);
-});
-test("checks if first is not special char", () => {
-    expect(testPassValidity("%12*hjj")).toBe(false);
-});
-test("checks if pass passes the test", () => {
-    expect(testPassValidity("Thisisalongpasswotr&$6783^&*ThatPasses")).toBe(
-        true
-    );
+const test_pass = [
+    "t@osh0rt",
+    "noSpecialCharactersornum",
+    "NoNumb&rsbutlongenough",
+    "LongEnoughNoNumorSpecCh3r",
+    "*CharAtBeginingandlong",
+    "This#!sAc0rrectPassword!",
+    "Th1s!s@lsoCorr34tYay!!",
+    "AndITooAmAv@l!dP4ssw0rd"
+];
+
+test("checks if password is valid", () => {
+    expect(testPassValidity(test_pass[0])).toBe(false);
+    expect(testPassValidity(test_pass[1])).toBe(false);
+    expect(testPassValidity(test_pass[2])).toBe(false);
+    expect(testPassValidity(test_pass[3])).toBe(false);
+    expect(testPassValidity(test_pass[4])).toBe(false);
+    expect(testPassValidity(test_pass[5])).toBe(true);
+    expect(testPassValidity(test_pass[6])).toBe(true);
+    expect(testPassValidity(test_pass[7])).toBe(true);
 });
