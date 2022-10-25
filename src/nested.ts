@@ -177,12 +177,16 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    const qIds = questions.map((val: Question): number => val.id);
-    const targetIndex = qIds.findIndex(
-        (val: number): boolean => val == targetId
+    const qIndex = questions.findIndex(
+        (val: Question): boolean => val.id == targetId
     );
-
-    return [];
+    const newQuestions = questions.map(
+        (val: Question): Question => ({
+            ...val,
+            name: val.id == targetId ? newName : val.name
+        })
+    );
+    return newQuestions;
 }
 
 /***
