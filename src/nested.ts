@@ -133,7 +133,7 @@ export function publishAll(questions: Question[]): Question[] {
  */
 export function sameType(questions: Question[]): boolean {
     let type = questions.map((val: Question): string => val.type);
-    if (type.every((val: string): boolean => val == type[0])) {
+    if (type.every((val: string): boolean => val === type[0])) {
         return true;
     }
     return false;
@@ -150,8 +150,8 @@ export function addNewQuestion(
     name: string,
     type: QuestionType
 ): Question[] {
-    const newArray = questions;
-    return questions;
+    let newQuestions = [...questions, makeBlankQuestion(id, name, type)];
+    return newQuestions;
 }
 
 /***
@@ -164,6 +164,11 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
+    const qIds = questions.map((val: Question): number => val.id);
+    const targetIndex = qIds.findIndex(
+        (val: number): boolean => val == targetId
+    );
+
     return [];
 }
 
