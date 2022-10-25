@@ -34,13 +34,11 @@ export function findQuestion(
     questions: Question[],
     id: number
 ): Question | null {
-    const sorted = questions.findIndex(
-        (val: Question): boolean => val.id == id
-    );
-    if (questions[sorted].id == id) {
-        return questions[sorted];
+    const sorted = questions.filter((val: Question): boolean => id == val.id);
+    if (sorted[0] == undefined) {
+        return null;
     }
-    return null;
+    return sorted[0];
 }
 
 /**
@@ -113,7 +111,9 @@ export function toCSV(questions: Question[]): string {
  * making the `text` an empty string, and using false for both `submitted` and `correct`.
  */
 export function makeAnswers(questions: Question[]): Answer[] {
-    return [];
+    const qId = questions.filter((val: Question): number => val.id);
+    let answer: Answer[] = [];
+    return answer;
 }
 
 /***
@@ -146,7 +146,7 @@ export function addNewQuestion(
     name: string,
     type: QuestionType
 ): Question[] {
-    const newArray = questions.push(makeBlankQuestion.);
+    const newArray = questions;
     return questions;
 }
 
