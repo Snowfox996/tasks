@@ -111,7 +111,7 @@ export function toCSV(questions: Question[]): string {
  * making the `text` an empty string, and using false for both `submitted` and `correct`.
  */
 export function makeAnswers(questions: Question[]): Answer[] {
-    const qId = questions.filter((val: Question): number => val.id);
+    const qId = questions.map((val: Question): number => val.id);
     let answer: Answer[] = [];
     return answer;
 }
@@ -132,6 +132,10 @@ export function publishAll(questions: Question[]): Question[] {
  * are the same type. They can be any type, as long as they are all the SAME type.
  */
 export function sameType(questions: Question[]): boolean {
+    let type = questions.map((val: Question): string => val.type);
+    if (type.every((val: string): boolean => val == type[0])) {
+        return true;
+    }
     return false;
 }
 
