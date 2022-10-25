@@ -177,9 +177,6 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    const qIndex = questions.findIndex(
-        (val: Question): boolean => val.id == targetId
-    );
     const newQuestions = questions.map(
         (val: Question): Question => ({
             ...val,
@@ -201,7 +198,18 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return [];
+    const newQuestions = questions.map(
+        (val: Question): Question => ({
+            ...val,
+            type: val.id == targetId ? newQuestionType : val.type,
+            options:
+                newQuestionType != "multiple_choice_question" &&
+                val.id == targetId
+                    ? (val.options = [])
+                    : val.options
+        })
+    );
+    return newQuestions;
 }
 
 /**
