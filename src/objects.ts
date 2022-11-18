@@ -8,12 +8,7 @@ import { Question, QuestionType } from "./interfaces/question";
 export function makeBlankQuestion(
     id: number,
     name: string,
-    type: QuestionType,
-    body: string,
-    expected: string,
-    options: Array[],
-    points: number,
-    published: boolean
+    type: QuestionType
 ): Question {
     const blankQuestion = {
         id: id,
